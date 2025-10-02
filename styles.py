@@ -227,7 +227,7 @@ def get_footer_html():
     """Retorna HTML do footer"""
     return """
     <div style="text-align: center; color: #666;">
-        <p style="margin: 0;">Desenvolvido com ❤️ por <strong>TRR Contabilidade</strong></p>
+        <p style="margin: 0;">Desenvolvido por <strong>ROVIE tech solutions</strong></p>
         <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Powered by Python 🐍 & Streamlit</p>
     </div>
     """

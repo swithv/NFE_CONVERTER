@@ -4,7 +4,6 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-import base64
 
 # Imports dos módulos personalizados
 from config import PAGE_CONFIG, CAMPOS_DISPONIVEIS, CAMPOS_PRODUTOS, CAMPOS_PADRAO_NOTAS, CAMPOS_PADRAO_PRODUTOS
@@ -18,21 +17,8 @@ st.set_page_config(**PAGE_CONFIG)
 # Aplica CSS customizado
 st.markdown(get_custom_css(), unsafe_allow_html=True)
 
-# ========== UPLOAD DE LOGO (SIDEBAR) ==========
+# ========== SIDEBAR ==========
 with st.sidebar:
-    st.markdown("### 🖼️ Personalizar Logo")
-    logo_file = st.file_uploader(
-        "Envie o logo da empresa",
-        type=['png', 'jpg', 'jpeg'],
-        help="Imagem que aparecerá no cabeçalho (recomendado: quadrada, 500x500px)"
-    )
-    
-    logo_base64 = None
-    if logo_file:
-        logo_base64 = base64.b64encode(logo_file.read()).decode()
-    
-    st.markdown("---")
-    
     st.markdown("""
     ### 💡 Sobre a Aplicação
     
@@ -48,8 +34,8 @@ with st.sidebar:
     - Resumos estatísticos
     """)
 
-# Header personalizado com logo
-st.markdown(get_header_html(logo_base64), unsafe_allow_html=True)
+# Header personalizado (sem logo)
+st.markdown(get_header_html(), unsafe_allow_html=True)
 
 # Conteúdo principal - Cards informativos
 col1, col2, col3 = st.columns(3)
